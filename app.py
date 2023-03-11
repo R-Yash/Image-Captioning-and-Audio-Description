@@ -17,7 +17,7 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 1
 f = open("tokenizer.pkl", "rb")
 tokenizer = pickle.load(f)
 
-model = keras.models.load_model("best_model.h5")
+model = keras.models.load_model("model.h5")
 vgg = keras.applications.vgg16.VGG16(
     include_top=True,
     weights="imagenet",
@@ -101,5 +101,5 @@ def after():
 
 
 if (__name__) == "__main__":
-    app.run(debug=False,host='0.0.0.0')
+    app.run(debug=False, host="0.0.0.0")
 
